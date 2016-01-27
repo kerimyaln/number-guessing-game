@@ -1,12 +1,27 @@
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+import java.util.Scanner;
+public class numberGame {
+	static Scanner sc;
+	public static void main(String[] args) {
+   sc=new Scanner(System.in);
+		int a,b,c,d=1;
+   System.out.println("You'll find the number of how many estimates: ");
+   a=sc.nextInt();
+   b=(int)(Math.random()*100);
+   System.out.println("Enter a number: ");
+   c=sc.nextInt();
+   while(true){
+	  if(d<a){
+	   if(c==b){
+	System.out.println("You found "+d+" estimates!!");
+	break;}
+	   else{
+		   if(c>b){  d++;
+			   System.out.println("Enter a lower number: ");
+			   c=sc.nextInt();}
+		   else{ d++;
+			   System.out.println("Enter a higher number: ");
+			   c=sc.nextInt();  } } }
+	       else{
+		  System.out.println("You lose the game, you have to find number "+b);
+		  break;  } }
+		} }
